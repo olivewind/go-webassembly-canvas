@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Go + WebAssembly = Anything </title>
+    <script src="js/wasm_exec.js"></script>
+    <style>
+        html, body{
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            text-align: center;
+        }
+        *{
+            user-select: none;
+        }
+        canvas{
+            margin: 0px auto;
+            display: block;
+            cursor: pointer;
+            min-height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Go + WebAssembly</h1>
+    <canvas title="click me" id='canvas'>Your browser does not support canvas</canvas>
+    <footer><a href="https://github.com/olivewind/go-webAssembly-canvas" target="_blank">code</a></footer>
+</body>
+
+<script src="js/app.js"></script>
+</html>
