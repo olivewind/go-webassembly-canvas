@@ -39,6 +39,7 @@ func render() {
 }
 
 func addEventListener()  {
+	// see https://tip.golang.org/pkg/syscall/js/?GOOS=js&GOARCH=wasm#NewCallback
 	done := make(chan struct{})
 	var cb js.Callback = js.NewCallback(func(args []js.Value) {
 		go func() {
