@@ -41,11 +41,12 @@ func render() {
 func addEventListener()  {
 	// see https://tip.golang.org/pkg/syscall/js/?GOOS=js&GOARCH=wasm#NewCallback
 	done := make(chan struct{})
-	var cb js.Callback = js.NewCallback(func(args []js.Value) {
+	var cb = js.FuncOf(func(this js.Value, args []js.Value) interface{} {
 		go func() {
 			println("click")
 			render()
 		}()
+		return nil
 	})
 	js.
 		Global().
